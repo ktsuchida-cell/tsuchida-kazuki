@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "oripa"
+version = "0.1.0"
+description = "メタオリパのパック（ガチャ）構築ツール"
+requires-python = ">=3.11"
+dependencies = ["openpyxl>=3.1"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "formulas>=1.2"]
+
+[project.scripts]
+oripa = "oripa.cli:main"
+
+[tool.setuptools]
+packages = ["oripa"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]

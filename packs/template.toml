@@ -1,0 +1,54 @@
+# 新しいパックを作るときのテンプレート。
+# このファイルをコピーして packs/2026-10-07_xxx.toml のように名前を付け、
+#   python -m oripa packs/2026-10-07_xxx.toml
+# を実行すると out/2026-10-07_xxx.xlsx（構築シート）ができる。
+
+[pack]
+name = "（ガチャ名）"
+author = "（作成者）"
+price = 500                 # 一回のPT。回しやすい少額にする（週次MTG 9/23 方針）
+draws = 5000                # 総口
+target_return_rate = 0.97   # count = "auto" の枠は、この還元率を超えない最大枚数になる
+max_return_rate = 1.00      # これを超えたらエラー（赤字防止。お詫びガチャ等で上げるときだけ変更）
+seed = 20261007             # 当選番号の乱数シード。同じ値なら同じ番号になる
+# cards_csv = "cards.csv"   # カードをCSVで渡す場合（見出し: 賞,名称,URL,仕入れ価格,数量,配送のみ,在庫,掛け率,メモ）
+
+[pricing]
+fee = 1.05                  # PT = 仕入れ価格 × fee × 掛け率 を500円単位に切り上げ
+default_markup = 1.3        # 下の表にない賞の掛け率
+ship_only_tiers = ["S爆"]   # この賞は「配送のみ」（ポイント交換不可）
+coupon_rate = 0.97          # クーポン利用後課金額 = 期待課金額 × 0.97
+
+[pricing.markup]
+"S爆" = 1.4                 # 高額の目玉は 1.45〜1.5 にすることもある（カード個別に markup で上書き可）
+"S" = 1.3
+
+# ---- 当たりカード（目玉は仕入済みの在庫カードを優先して stock = true に） ----
+[[cards]]
+tier = "S爆"
+name = "（目玉カード名）"
+url = "https://snkrdunk.com/apparels/..."
+cost = 100000               # 仕入れ価格（スニダンの価格）
+stock = true                # 仕入済み在庫なら true
+
+[[cards]]
+tier = "S"
+name = "（S賞カード名）"
+url = "https://snkrdunk.com/apparels/..."
+cost = 20000
+# count = 2                 # 同じカードを複数入れる場合
+# markup = 1.25             # このカードだけ掛け率を変える場合
+# pt = 30000                # PTを手で決める場合（仕入れ価格からの計算をしない）
+
+# ---- ハズレ枠（ポイント交換） ----
+# count は 固定枚数 / "auto"（目標還元率に合わせて自動）/ "rest"（残り全部）のどれか。
+# "rest" はちょうど1つ、"auto" は0〜1つ。
+[[fillers]]
+tier = "A"
+pt = 1000                   # 一回の価格より大きいと「アド」になる
+count = "auto"
+
+[[fillers]]
+tier = "B"
+pt = 100
+count = "rest"

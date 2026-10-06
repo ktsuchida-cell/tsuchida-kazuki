@@ -1,0 +1,21 @@
+# 構築シート「1/4」（一回1,000PT・アド確率1/4・最低保証厚め）を再現した例。
+# カードはスプレッドシートからコピーしたCSV（ad_1in4_1000pt_cards.csv）から読み込む。
+
+[pack]
+name = "一回1,000PT 最低保証厚め（シート「1/4」の再現）"
+price = 1000
+draws = 10000
+cards_csv = "ad_1in4_1000pt_cards.csv"
+max_return_rate = 1.00
+seed = 14
+
+[[fillers]]
+tier = "A"
+pt = 2100
+count = 2490
+
+[[fillers]]
+tier = "B"
+pt = 500
+count = "rest"
+note = "最低保証厚めで作りました"

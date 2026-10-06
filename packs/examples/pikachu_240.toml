@@ -1,0 +1,79 @@
+# 構築シート「シート26」（ピカチュウ縛り・一回240PT）を再現した例。
+# ハズレ枠は当時の枚数（A 1,990枚）を固定で入れているので、構築PT・還元率がシートと一致する。
+
+[pack]
+name = "ピカチュウ縛り 一回240PT（シート26の再現）"
+price = 240
+draws = 20000
+max_return_rate = 1.00
+seed = 26
+
+[[cards]]
+tier = "S爆"
+name = "なみのりピカチュウ"
+url = "https://snkrdunk.com/apparels/91447/used/41620155"
+cost = 136480
+
+[[cards]]
+tier = "S爆"
+name = "ピカチュウ"
+url = "https://snkrdunk.com/apparels/104514/used/49636689"
+cost = 90000
+
+[[cards]]
+tier = "S爆"
+name = "海で遊ぶピカチュウ"
+url = "https://snkrdunk.com/apparels/107448/used/42682995"
+cost = 79980
+
+[[cards]]
+tier = "S"
+name = "ピカチュウv"
+url = "https://snkrdunk.com/apparels/96712/used/49636842"
+cost = 32800
+
+[[cards]]
+tier = "S"
+name = "ピカチュウvmax"
+url = "https://snkrdunk.com/apparels/91154/used/49630199"
+cost = 26800
+
+[[cards]]
+tier = "S"
+name = "ピカチュウ"
+url = "https://snkrdunk.com/apparels/96667/used/49639538"
+cost = 17999
+
+[[cards]]
+tier = "S"
+name = "ピカチュウex"
+url = "https://snkrdunk.com/apparels/418755/used/43615488"
+cost = 32500
+
+[[cards]]
+tier = "S"
+name = "ピカチュウ(pokemon go)"
+url = "https://snkrdunk.com/apparels/289056/used/49634528"
+cost = 16300
+
+[[cards]]
+tier = "S"
+name = "そらをとぶピカチュウvmax"
+url = "https://snkrdunk.com/apparels/141446/used/44025153"
+cost = 13450
+
+[[cards]]
+tier = "S"
+name = "ピカチュウ"
+url = "https://snkrdunk.com/apparels/128089/used/49644701"
+cost = 15700
+
+[[fillers]]
+tier = "A"
+pt = 2000
+count = 1990
+
+[[fillers]]
+tier = "B"
+pt = 1
+count = "rest"
