@@ -1,0 +1,103 @@
+# 1万円課金ガチャ「MEGA MURコレクション」（構築シート「シート35」の枠で作成）
+#
+# テーマ: MEGAシリーズの最上位レア MUR（メガウルトラレア）＋メガ系SAR。
+#   - メタオリパでは未実施（過去はメガ系カードが単発で入った程度）。
+#   - 競合の1万円帯は PSA10確定・BOX確定・セット賞が中心で、MUR/メガ縛りは検索では見つからなかった。
+#   - 競合で人気の PSA10 を S爆に2枚入れている。
+#
+# 仕入れ価格はウェブ検索で拾った販売相場（2026/7/22〜10/6、日付はメモ欄）。
+# 相場が下落中なので、仕入れ前に必ずスニダンで確認して cost を更新し、再実行すること。
+
+[pack]
+name = "1万円課金ガチャ MEGA MURコレクション"
+author = "槌田（案）"
+price = 10000
+draws = 1000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261007
+
+[pricing]
+fee = 1.05
+
+[pricing.markup]
+"S爆" = 1.5   # シート35と同じ
+"S" = 1.25
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "メガリザードンYex MUR [スタートデッキ100]"
+cost = 598000
+note = "相場 2026/10/6（8月148万→下落中）"
+
+[[cards]]
+tier = "S爆"
+name = "メガレックウザex MUR PSA10 [ストームエメラルダ]"
+cost = 230000
+note = "PSA10相場 2026/9/24"
+
+[[cards]]
+tier = "S爆"
+name = "メガリザードンXex MUR [M2 116/080]"
+cost = 218000
+note = "相場 2026/8/3（要再確認・下落傾向）"
+
+[[cards]]
+tier = "S爆"
+name = "メガサーナイトex MUR PSA10 [メガシンフォニア]"
+cost = 164000
+note = "PSA10相場（日付未確認）"
+
+# ---- S賞 ----
+[[cards]]
+tier = "S"
+name = "メガリザードンXex SAR [M2 110/080]"
+url = "https://snkrdunk.com/apparels/704401"
+cost = 118000
+note = "相場 2026/10。シート9で在庫表記あり→在庫なら仕入不要"
+
+[[cards]]
+tier = "S"
+name = "メガゲッコウガex MUR [M4]"
+cost = 74800
+note = "相場 2026/9/23"
+
+[[cards]]
+tier = "S"
+name = "メガゲンガーex SAR [M2a]"
+cost = 54800
+note = "相場 2026/8/5"
+
+[[cards]]
+tier = "S"
+name = "メガカイリューex MUR [M2a]"
+cost = 39800
+note = "相場 2026/8/3"
+
+[[cards]]
+tier = "S"
+name = "メガジガルデex MUR [M3]"
+cost = 35800
+note = "相場（日付未確認）"
+
+[[cards]]
+tier = "S"
+name = "メガカイリューex SAR [M2a 246/193]"
+cost = 31800
+note = "相場 2026/7/22"
+
+# ---- ハズレ枠 ----
+# シート35のまま（A 5,500PT×90）だと還元率73.7%にしかならないため、
+# A枠を「20,000PT（2倍アド）」にして、還元率97%を超えない最大枚数を自動計算する。
+[[fillers]]
+tier = "A"
+pt = 20000
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 5000
+count = "rest"
+note = "最低保証（シート35と同じ）"
