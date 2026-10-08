@@ -1,0 +1,75 @@
+# ロケット団の逆襲ガチャ（一回300PT・少額デイリー向け）
+#
+# テーマ: 「ロケット団の栄光」の ロケット団の◯◯ 縛り＋未開封BOX。
+#   - メタオリパでは未実施（ロケット団のミュウツーex等が単発で入ったのみ）。
+#   - 大手オンラインオリパのロケット団縛りは検索では見つからなかった（個人出品の福袋のみ）。
+#   - 競合で人気の「BOXが当たる」をS爆に入れている。
+#
+# 仕入れ価格は検索で拾った販売相場（2026年9月前後）。仕入れ前にスニダンで確認して再実行すること。
+
+[pack]
+name = "ロケット団の逆襲ガチャ"
+author = "槌田（案）"
+price = 300
+draws = 3000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261008
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "ロケット団のミュウツーex SAR [SV10]"
+cost = 65850
+note = "販売 2026/9頃 pokeka-atari"
+
+[[cards]]
+tier = "S爆"
+name = "【未開封BOX】ロケット団の栄光"
+cost = 26500
+markup = 1.3
+note = "BOX相場 2026/9頃。BOXは掛け率1.3"
+
+[[cards]]
+tier = "S爆"
+name = "ロケット団のファイヤーex SAR [SV10]"
+cost = 21934
+note = "販売 2026/9頃"
+
+# ---- S賞 ----
+[[cards]]
+tier = "S"
+name = "ロケット団のニドキングex SAR [SV10]"
+cost = 10416
+note = "販売 2026/9頃"
+
+[[cards]]
+tier = "S"
+name = "ロケット団のクロバットex SAR [SV10]"
+cost = 9480
+note = "販売 2026/9頃"
+
+[[cards]]
+tier = "S"
+name = "ロケット団のサカキ SAR [SV10]"
+cost = 3730
+note = "販売 2026/9"
+
+[[cards]]
+tier = "S"
+name = "ロケット団のアテナ SAR [SV10]"
+cost = 3130
+note = "販売 2026/9"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 600
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 100
+count = "rest"
+note = "最低保証"
