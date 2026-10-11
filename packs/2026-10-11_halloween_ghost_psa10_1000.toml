@@ -1,0 +1,80 @@
+# ハロウィン ゴーストナイトガチャ PSA10版（一回1,000PT）
+#
+# 2026-10-08版（素体）を、当たりカードをPSA10鑑定品で出す前提で組み直したもの。
+#   - 仕入れ価格をPSA10の相場・出品価格に差し替え（日付はメモ欄）。
+#   - サーフゴーex SARは、ドラパルトexと同じテラスタルフェスex（SV8a）版にした。
+#   - 構成はロケット団の逆襲（PSA10）とそろえた: 2倍アド、最低保証は一回の1割、還元率97%。
+#
+# 仕入れ前にスニダンでPSA10の在庫と価格を確認して再実行すること。
+
+[pack]
+name = "ハロウィン ゴーストナイトガチャ（PSA10）"
+author = "槌田（案）"
+price = 1000
+draws = 5000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261031
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "ゲンガー&ミミッキュGX SA PSA10 [SM9 103/095]"
+cost = 587000
+note = "PSA10相場 2026/7/29 ポケカチ"
+
+[[cards]]
+tier = "S爆"
+name = "ギラティナV SA PSA10 [S11 111/100]"
+cost = 358000
+note = "PSA10相場 2026/8/4 ポケカチ"
+
+[[cards]]
+tier = "S爆"
+name = "ゲンガーVMAX SA PSA10 [SGG 020/019]"
+cost = 395760
+note = "PSA10出品価格（日付不明・要確認）"
+
+# ---- S賞 ----
+[[cards]]
+tier = "S"
+name = "メガゲンガーex SAR PSA10 [M2a 240/193]"
+cost = 97000
+note = "PSA10最新価格 price-base"
+
+[[cards]]
+tier = "S"
+name = "マツバの確信 SAR PSA10 [SV5K 097/071]"
+cost = 39800
+note = "PSA10売り切れ価格 マギ（2.6万〜6.4万と幅あり・要確認）"
+
+[[cards]]
+tier = "S"
+name = "ミミッキュVMAX CSR PSA10 [S8b 234/184]"
+cost = 22800
+note = "PSA10出品価格（1.4万〜3.4万と幅あり・要確認）"
+
+[[cards]]
+tier = "S"
+name = "サーフゴーex SAR PSA10 [SV8a]"
+cost = 8400
+note = "PSA10相場 2026/7〜8 ポケカチ（テラスタルフェスex版）"
+
+[[cards]]
+tier = "S"
+name = "ドラパルトex SAR PSA10 [SV8a 221/187]"
+cost = 7292
+note = "PSA10販売価格 Samurai Sword（在庫切れ・日付不明）"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 2000
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 100
+count = "rest"
+note = "最低保証"
