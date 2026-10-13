@@ -1,0 +1,96 @@
+# ドラゴン PSA10ガチャ（一回5,000PT）
+#
+# 征悟さんの依頼（2026-10-12 #メタオリパ_社内連携チャット）:
+#   一回5,000PT、総口2,000〜5,000口、トップ20〜40万円。
+#
+# テーマ: ドラゴンタイプのポケモン縛り・当たりは全部PSA10。
+#   - 構築シートの過去パックにドラゴン縛りはない。検索した範囲では競合にも見つからなかった。
+#   - ギラティナV SA はハロウィン（PSA10）の目玉なので入れていない。
+#   - 一回5,000PT以上の過去パック（シート9・アド確課金・1/10 高還元）はどれも還元率100%超で赤字。
+#     このパックは還元率97%に収める。
+#
+# 仕入れ価格は相場サイト・出品価格（日付はメモ欄）。仕入れ前にスニダンで確認して再実行すること。
+
+[pack]
+name = "ドラゴン PSA10ガチャ"
+author = "槌田（案）"
+price = 5000
+draws = 3000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261013
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "レシラム&リザードンGX SA PSA10 [SM10]"
+cost = 329000
+note = "PSA10相場 2026/7/29 altema https://altema.jp/pokemoncard/card/3465"
+
+[[cards]]
+tier = "S爆"
+name = "レックウザV SA PSA10 [S7R 076/067]"
+cost = 278000
+note = "カードラッシュ PSA10販売価格（在庫1） https://www.cardrush-pokemon.jp/product/36109"
+
+[[cards]]
+tier = "S爆"
+name = "カイリューV SA PSA10 [S7R 074/067]"
+cost = 130000
+note = "PSA10相場 2026/7/29 altema https://altema.jp/pokemoncard/card/11349"
+
+# ---- S賞 ----
+[[cards]]
+tier = "S"
+name = "メガレックウザex SAR PSA10 [ストームエメラルダ 110/076]"
+cost = 68000
+note = "PSA10出品価格（aucfan・1件のみ・要確認）"
+
+[[cards]]
+tier = "S"
+name = "メガカイリューex SAR PSA10 [M2a 246/193]"
+cost = 65800
+note = "PSA10出品価格 4.4万〜8.7万の中間（magi・要確認）"
+
+[[cards]]
+tier = "S"
+name = "レシラムex SAR PSA10 [SV11W 168/086]"
+cost = 44800
+note = "PSA10出品価格（magi 3.0万〜4.6万・要確認）"
+
+[[cards]]
+tier = "S"
+name = "ゼクロムex SAR PSA10 [SV11B 169/086]"
+cost = 43800
+note = "PSA10出品価格（magi 3.2万〜4.6万・要確認）"
+
+[[cards]]
+tier = "S"
+name = "コライドンex SAR PSA10 [SV1S 103/078]"
+cost = 19000
+note = "PSA10価格 price-base（日付なし・要確認）"
+
+[[cards]]
+tier = "S"
+name = "メガラティアスex SAR PSA10 [088/063]"
+cost = 14800
+note = "PSA10出品価格（magi・要確認）"
+
+[[cards]]
+tier = "S"
+name = "ミライドンex SAR PSA10 [SV1V 102/078]"
+cost = 12000
+note = "PSA10取引 2026/6/29 aucfan（要確認）"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 10000
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 2500
+count = "rest"
+note = "最低保証（一回の半額）"
