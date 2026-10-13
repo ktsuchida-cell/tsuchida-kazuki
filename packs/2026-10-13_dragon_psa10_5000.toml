@@ -9,9 +9,10 @@
 #   - 一回5,000PT以上の過去パック（シート9・アド確課金・1/10 高還元）はどれも還元率100%超で赤字。
 #     このパックは還元率97%に収める。
 #
-# 仕入れ価格は相場サイト・出品価格（日付はメモ欄）。仕入れ前にスニダンで確認して再実行すること。
+# 仕入れ価格は 2026-10-13 に販売店のPSA10価格（主にカードラッシュ）で調べ直した。
+# 仕入れ前にスニダンでも確認して再実行すること。
 #
-# 当選番号は高いカードほど後ろ（トップは総口の9割以降の2891番）。ツールが自動でそうする。
+# 当選番号は高いカードほど後ろ（トップは総口の9割以降）。ツールが自動でそうする。
 
 [pack]
 name = "ドラゴン PSA10ガチャ"
@@ -25,64 +26,72 @@ seed = 20261013
 # ---- S爆（配送のみ）----
 [[cards]]
 tier = "S爆"
-name = "レシラム&リザードンGX SA PSA10 [SM10]"
-cost = 329000
-note = "PSA10相場 2026/7/29 altema https://altema.jp/pokemoncard/card/3465"
+name = "レシラム&リザードンGX SA PSA10 [SM10 097/095]"
+cost = 338000
+url = "https://www.cardrush-pokemon.jp/product/35701"
+note = "カードラッシュ PSA10販売価格（在庫1・10/13検索）。PSA10相場は32.9万（altema 7/29）"
 
 [[cards]]
 tier = "S爆"
 name = "レックウザV SA PSA10 [S7R 076/067]"
 cost = 278000
-note = "カードラッシュ PSA10販売価格（在庫1） https://www.cardrush-pokemon.jp/product/36109"
+url = "https://www.cardrush-pokemon.jp/product/36109"
+note = "カードラッシュ PSA10販売価格（在庫1・10/13検索）"
 
 [[cards]]
 tier = "S爆"
 name = "カイリューV SA PSA10 [S7R 074/067]"
-cost = 130000
-note = "PSA10相場 2026/7/29 altema https://altema.jp/pokemoncard/card/11349"
+cost = 118000
+url = "https://www.cardrush-pokemon.jp/product/40394"
+note = "カードラッシュ PSA10販売価格（在庫1・10/13検索）"
 
 # ---- S賞 ----
 [[cards]]
 tier = "S"
-name = "メガレックウザex SAR PSA10 [ストームエメラルダ 110/076]"
-cost = 68000
-note = "PSA10出品価格（aucfan・1件のみ・要確認）"
+name = "メガレックウザex SAR PSA10 [M6 110/076]"
+cost = 98000
+note = "ヤフオクPSA10落札 98,000円（2026/9/18・型番未確認）。販売店のPSA10は見つからず・要確認"
 
 [[cards]]
 tier = "S"
 name = "メガカイリューex SAR PSA10 [M2a 246/193]"
-cost = 65800
-note = "PSA10出品価格 4.4万〜8.7万の中間（magi・要確認）"
+cost = 48400
+note = "PSA10相場 48,400円（相場サイト・10/13検索）。カードラッシュは状態難PSA10のみ47,800円"
 
 [[cards]]
 tier = "S"
 name = "レシラムex SAR PSA10 [SV11W 168/086]"
 cost = 44800
-note = "PSA10出品価格（magi 3.0万〜4.6万・要確認）"
+url = "https://www.cardrush-pokemon.jp/product/69456"
+note = "カードラッシュ PSA10販売価格（10/13検索）"
 
 [[cards]]
 tier = "S"
 name = "ゼクロムex SAR PSA10 [SV11B 169/086]"
-cost = 43800
-note = "PSA10出品価格（magi 3.2万〜4.6万・要確認）"
+cost = 37800
+url = "https://www.cardrush-pokemon.jp/product/69455"
+note = "カードラッシュ PSA10販売価格（10/13検索）"
 
 [[cards]]
 tier = "S"
 name = "コライドンex SAR PSA10 [SV1S 103/078]"
-cost = 19000
-note = "PSA10価格 price-base（日付なし・要確認）"
+cost = 21800
+url = "https://www.cardrush-pokemon.jp/product/40944"
+note = "カードラッシュ PSA10販売価格（10/13検索）"
 
 [[cards]]
 tier = "S"
 name = "メガラティアスex SAR PSA10 [088/063]"
-cost = 14800
-note = "PSA10出品価格（magi・要確認）"
+cost = 12800
+url = "https://www.cardrush-pokemon.jp/product/70693"
+note = "カードラッシュ PSA10販売価格（在庫1・10/13検索）"
 
 [[cards]]
 tier = "S"
 name = "ミライドンex SAR PSA10 [SV1V 102/078]"
-cost = 12000
-note = "PSA10取引 2026/6/29 aucfan（要確認）"
+cost = 16800
+url = "https://www.cardrush-pokemon.jp/product/40945"
+note = "カードラッシュ PSA10販売価格（在庫4・10/13検索）"
 
 # ---- ハズレ枠 ----
 [[fillers]]
