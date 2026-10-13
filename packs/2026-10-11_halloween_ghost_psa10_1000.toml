@@ -5,6 +5,10 @@
 #   - サーフゴーex SARは、ドラパルトexと同じテラスタルフェスex（SV8a）版にした。
 #   - 構成はロケット団の逆襲（PSA10）とそろえた: 2倍アド、最低保証は一回の1割、還元率97%。
 #
+# 2026-10-13: 目玉3枚のこの形で進める。仕入れ価格を販売店のPSA10価格（10/13検索）に更新した。
+#   当選番号は構築シートに入れた番号（10/11に割り当て）をそのまま使う。
+#   ツールは今は高いカード順に番号を振るので、再実行して出る番号とは違う。
+#
 # 仕入れ前にスニダンでPSA10の在庫と価格を確認して再実行すること。
 
 [pack]
@@ -20,51 +24,56 @@ seed = 20261031
 [[cards]]
 tier = "S爆"
 name = "ゲンガー&ミミッキュGX SA PSA10 [SM9 103/095]"
-cost = 587000
-note = "PSA10相場 2026/7/29 ポケカチ"
+cost = 538000
+url = "https://www.cardrush-pokemon.jp/product/42370"
+note = "カードラッシュ PSA10販売価格（在庫2・10/13検索）"
 
 [[cards]]
 tier = "S爆"
 name = "ギラティナV SA PSA10 [S11 111/100]"
-cost = 358000
-note = "PSA10相場 2026/8/4 ポケカチ"
+cost = 348000
+url = "https://www.cardrush-pokemon.jp/product/38022"
+note = "カードラッシュ PSA10販売価格（10/13検索・別表示で308,000円 在庫1）"
 
 [[cards]]
 tier = "S爆"
 name = "ゲンガーVMAX SA PSA10 [SGG 020/019]"
-cost = 395760
-note = "PSA10出品価格（日付不明・要確認）"
+cost = 442640
+note = "Samurai Sword PSA10出品価格（10/13検索）。magiの売り切れは27万〜42.8万"
 
 # ---- S賞 ----
 [[cards]]
 tier = "S"
 name = "メガゲンガーex SAR PSA10 [M2a 240/193]"
-cost = 97000
-note = "PSA10最新価格 price-base"
+cost = 94800
+url = "https://www.cardrush-pokemon.jp/product/77955"
+note = "カードラッシュ PSA10販売価格（10/13検索）"
 
 [[cards]]
 tier = "S"
 name = "マツバの確信 SAR PSA10 [SV5K 097/071]"
-cost = 39800
-note = "PSA10売り切れ価格 マギ（2.6万〜6.4万と幅あり・要確認）"
+cost = 43700
+note = "PSA10相場 2026/7/29 ポケカチ（magi出品 45,796円）"
 
 [[cards]]
 tier = "S"
 name = "ミミッキュVMAX CSR PSA10 [S8b 234/184]"
-cost = 22800
-note = "PSA10出品価格（1.4万〜3.4万と幅あり・要確認）"
+cost = 21800
+url = "https://www.cardrush-pokemon.jp/product/37283"
+note = "カードラッシュ PSA10販売価格（10/13検索）"
 
 [[cards]]
 tier = "S"
-name = "サーフゴーex SAR PSA10 [SV8a]"
-cost = 8400
-note = "PSA10相場 2026/7〜8 ポケカチ（テラスタルフェスex版）"
+name = "サーフゴーex SAR PSA10 [SV8a 220/187]"
+cost = 8003
+note = "PSA10出品価格（10/13検索・6,000円の出品もあり）"
 
 [[cards]]
 tier = "S"
 name = "ドラパルトex SAR PSA10 [SV8a 221/187]"
-cost = 7292
-note = "PSA10販売価格 Samurai Sword（在庫切れ・日付不明）"
+cost = 8980
+url = "https://www.cardrush-pokemon.jp/phone/product/64509"
+note = "カードラッシュ PSA10販売価格（10/13検索・在庫は未確認）"
 
 # ---- ハズレ枠 ----
 [[fillers]]
