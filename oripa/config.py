@@ -71,6 +71,7 @@ def load_config(path) -> PackConfig:
         target_return_rate=pack.get("target_return_rate", 0.97),
         max_return_rate=pack.get("max_return_rate", 1.0),
         seed=pack.get("seed"),
+        top_number_from=pack.get("top_number_from", 0.9),
         author=pack.get("author", ""),
     )
 

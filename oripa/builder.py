@@ -28,6 +28,8 @@ def _validate_config(config: PackConfig) -> None:
         raise PackError("一回の価格（price）は1以上にしてください。")
     if config.draws <= 0:
         raise PackError("総口（draws）は1以上にしてください。")
+    if not 0 <= config.top_number_from <= 1:
+        raise PackError("top_number_from は 0〜1 の割合で指定してください（9割以降なら 0.9）。")
     if not config.cards:
         raise PackError("当たりカード（cards）が1枚もありません。")
     for card in config.cards:
@@ -116,14 +118,21 @@ def _resolve_fillers(config: PackConfig, card_lines: list) -> list:
 
 
 def _assign_winning_numbers(lines: list, config: PackConfig) -> None:
-    """当たりカード1枚ごとに 1〜総口 の重複しない当選番号を割り振る。ハズレ枠はランダム。"""
+    """当たりカード1枚ごとに 1〜総口 の重複しない当選番号を割り振る。ハズレ枠はランダム。
+
+    高いカード（PTの高い順）ほど後ろの番号にし、一番高いカードは総口の
+    top_number_from（既定 9割）以降の番号にする。
+    """
     rng = random.Random(config.seed)
-    hits = sum(line.count for line in lines if not line.is_filler)
-    numbers = rng.sample(range(1, config.draws + 1), hits)
-    for line in lines:
-        if line.is_filler:
-            continue
-        line.winning_numbers = sorted(numbers[: line.count])
+    hit_lines = [line for line in lines if not line.is_filler]
+    hits = sum(line.count for line in hit_lines)
+    numbers = sorted(rng.sample(range(1, config.draws + 1), hits))
+    top_from = max(math.ceil(config.draws * config.top_number_from), 1)
+    if numbers and numbers[-1] < top_from:
+        # ほかの番号はすべて numbers[-1] より小さいので、重複も順番の入れ替わりも起きない
+        numbers[-1] = rng.randint(top_from, config.draws)
+    for line in sorted(hit_lines, key=lambda line: (line.pt, line.cost)):
+        line.winning_numbers = numbers[: line.count]
         numbers = numbers[line.count :]
 
 

@@ -119,6 +119,27 @@ def test_winning_numbers_are_unique_in_range_and_reproducible():
     assert [line.winning_numbers for line in again.card_lines] == [line.winning_numbers for line in first.card_lines]
 
 
+@pytest.mark.parametrize("seed", range(20))
+def test_expensive_cards_get_later_numbers_and_top_is_in_last_tenth(seed):
+    cards = [
+        Card("S", "安い", 10_000),
+        Card("S爆", "目玉", 236_500),
+        Card("S", "中くらい", 39_780, count=2),
+        Card("S爆", "二番手", 100_000),
+    ]
+    result = build_pack(_simple_config(cards=cards, seed=seed))
+    by_pt = sorted(result.card_lines, key=lambda line: line.pt)
+    numbers = [n for line in by_pt for n in line.winning_numbers]
+    assert numbers == sorted(numbers)
+    assert len(set(numbers)) == 5
+    assert max(result.card_lines[1].winning_numbers) >= 9_000
+
+
+def test_rejects_top_number_ratio_outside_zero_to_one():
+    with pytest.raises(PackError, match="top_number_from"):
+        build_pack(_simple_config(top_number_from=90))
+
+
 def test_ship_only_defaults_to_s_baku_tier():
     result = build_pack(_simple_config())
     assert [line.ship_only for line in result.card_lines] == [True, False]

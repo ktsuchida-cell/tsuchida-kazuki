@@ -57,6 +57,7 @@ class PackConfig:
     target_return_rate: float = 0.97  # "auto" 枠はこの還元率を超えない最大枚数にする
     max_return_rate: float = 1.0  # これを超えたらエラー
     seed: Optional[int] = None  # 当選番号の乱数シード
+    top_number_from: float = 0.9  # 一番高い当たりは総口のこの割合以降の番号にする
     author: str = ""
 
 
