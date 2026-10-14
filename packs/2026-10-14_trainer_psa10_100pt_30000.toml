@@ -1,0 +1,108 @@
+# トレーナー＆相棒 PSA10ガチャ（一回100PT・30,000口）
+#
+# Backlog PJ_KJ_META_ORIPA-21（週次MTG 2026/10/14「2-2. ガチャ構築 > 企画案」、担当 槌田、期限 10/20）:
+#   一口100pt以下、BOXガチャ or トップ10万円以下、総口30,000口程度、還元率97%。
+#   → 当たりはPSA10が必須なので（未開封BOXは鑑定できない）、「トップ10万円以下」で組んだ。
+#     最初に作ったBOXガチャ版（2026-10-14_box_100pt_30000.toml）は不採用。
+#
+# テーマ: SVのトレーナーSAR（ナンジャモ・リーリエ・シロナ・ヒビキ）と、トレーナーの相棒ポケモンSAR
+#   （リーリエのピッピ・シロナのガブリアス・ナンジャモのハラバリー・Nのゾロアーク・ペパーのマフィティフ・ホップのザシアン）。
+#   当たりは30枚すべてPSA10。トップはナンジャモ SAR PSA10（約9万円）。
+#   - 過去の「サポ爆祭り（お詫びガチャ）」はSM期のトレーナーSR。今回はSV期のSARと相棒ポケモンで組んだ。
+#   - ヒビキのホウオウex SAR は征悟さんの「10000課金 110%」、マツバの確信 SAR はハロウィンで使っているので入れていない。
+#
+# PSA10の値段は 2026-10-14 時点のカードラッシュ販売価格と相場サイト（ポケカチ）。仕入れ前にスニダンで確認して再実行すること。
+
+[pack]
+name = "トレーナー＆相棒 PSA10ガチャ"
+author = "槌田（案）"
+price = 100
+draws = 30000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261022
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "ナンジャモ SAR PSA10 [SV2D 096/071]"
+cost = 89500
+note = "ポケカチ PSA10相場 2026/7/29（8/2は8.57万）"
+
+[[cards]]
+tier = "S爆"
+name = "リーリエの決心 SAR PSA10 [M1L 091/063]"
+cost = 70800
+url = "https://www.cardrush-pokemon.jp/product/70674"
+note = "カードラッシュ PSA10販売価格（在庫2・10/14検索）"
+
+[[cards]]
+tier = "S爆"
+name = "シロナのガブリアスex SAR PSA10 [SV9a 087/063]"
+cost = 41900
+url = "https://www.cardrush-pokemon.jp/product/65454"
+note = "販売価格 2026/5/12（ランキングサイト）。カードラッシュの値段は未確認・要確認"
+
+# ---- S賞 ----
+[[cards]]
+tier = "S"
+name = "リーリエのピッピex SAR PSA10 [SV9 126/100]"
+cost = 29800
+count = 2
+note = "ポケカチ PSA10相場 2026/10/1"
+
+[[cards]]
+tier = "S"
+name = "ヒビキの冒険 SAR PSA10 [SV9a 089/063]"
+cost = 26800
+count = 2
+url = "https://www.cardrush-pokemon.jp/product/66906"
+note = "カードラッシュ PSA10販売価格（10/14検索）"
+
+[[cards]]
+tier = "S"
+name = "シロナの覇気 SAR PSA10 [S12a 239/172]"
+cost = 20000
+count = 2
+note = "PSA10出品価格 1.8万〜2.1万（magi・10/14検索）・要確認"
+
+[[cards]]
+tier = "S"
+name = "ナンジャモのハラバリーex SAR PSA10 [SV9 125/100]"
+cost = 18000
+count = 3
+note = "ポケカチ PSA10相場（8/25は2万）"
+
+[[cards]]
+tier = "S"
+name = "Nのゾロアークex SAR PSA10 [SV9]"
+cost = 15000
+count = 3
+note = "ポケカチ PSA10相場（8/5は1.77万）"
+
+[[cards]]
+tier = "S"
+name = "ペパーのマフィティフex SAR PSA10 [SV9a 088/063]"
+cost = 7500
+count = 5
+note = "PSA10価格（古いデータ・海外相場は33〜50ドル）・要確認"
+
+[[cards]]
+tier = "S"
+name = "ホップのザシアンex SAR PSA10 [SV9]"
+cost = 4400
+count = 10
+note = "ポケカチ PSA10相場 2026/9/9（1か月前8,000）"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 200
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 30
+count = "rest"
+note = "最低保証"
