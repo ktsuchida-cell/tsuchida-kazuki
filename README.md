@@ -27,3 +27,9 @@ python -m pytest
 
 過去パック（シート26・1/4・1/100 高額2つ）の構築PT・還元率・概算収支が元シートと一致すること、
 xlsx の数式を再計算した値がツールの計算と一致することを確認している。
+
+## DM先の選定
+
+他社のオリパを買ってXに前向きな投稿をしている人から、毎日5名のDM先を選ぶ。
+条件と文面は [docs/dm/README.md](docs/dm/README.md)、記録は [docs/dm/DM候補リスト.csv](docs/dm/DM候補リスト.csv)。
+Claude Code に「今日のDM先を選んで」と頼むと `.claude/skills/oripa-dm` の手順で選ぶ。
