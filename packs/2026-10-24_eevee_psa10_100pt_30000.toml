@@ -1,0 +1,223 @@
+# ブイズ PSA10ガチャ（一回100PT・30,000口）
+#
+# 2026-10-24 槌田さんの依頼（ORIPA-21 と同じ条件で、新しいパックを作る）:
+#   一口100pt以下、BOXガチャ or トップ10万円以下、総口30,000口程度、還元率97%。
+#   → 当たりはPSA10が必須なので「トップ10万円以下」で組んだ。
+#
+# テーマ: イーブイと進化形（ブイズ）。当たりは29枚すべてPSA10。
+#   - 目玉はブラッキーex SAR PSA10（テラスタルフェスex）。テラスタルフェスexのブイズSARは全種入れた。
+#   - 競合: ブイズのオリパは大手（DOPA!・クローブ・日本トレカセンター・オリパワン）で多く出ているが、
+#     「1口100PT・3万口・当たり全部PSA10」のものは見つからなかった（docs/competitors/競合チェック記録.md）。
+#   - 過去の構築シートのブイズ系は一回10,000PTの課金ガチャ（ブラッキーVMAX）だけ。
+#
+# PSA10の値段は 2026-10-24 時点のカードラッシュ販売価格（売切のものは店の設定価格）と magi の成約価格。
+# ブラッキーex SAR PSA10 は過去12か月で3.5万〜12.2万円と値動きが大きい。10万円を超えたら目玉を見直す。
+# 仕入れ前にスニダンで確認して再実行すること。
+
+[pack]
+name = "ブイズ PSA10ガチャ"
+author = "槌田（案）"
+price = 100
+draws = 30000
+target_return_rate = 0.97
+max_return_rate = 1.00
+seed = 20261024
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "ブラッキーex SAR PSA10 [SV8a 217/187]"
+cost = 77800
+url = "https://www.cardrush-pokemon.jp/product/63175"
+note = "カードラッシュ 77,800（売切）。magi 成約 73,109〜82,194（直近2週）。4月は約12万・要確認"
+
+[[cards]]
+tier = "S爆"
+name = "グレイシアV SA PSA10 [S6a 077/069]"
+cost = 52800
+url = "https://www.cardrush-pokemon.jp/product/36173"
+note = "カードラッシュ 52,800。magi 成約 33,784〜39,366"
+
+[[cards]]
+tier = "S爆"
+name = "ニンフィアV SA PSA10 [S6a 083/069]"
+cost = 47800
+url = "https://www.cardrush-pokemon.jp/product/36174"
+note = "カードラッシュ 47,800。magi 成約 43,592〜44,759"
+
+# ---- S賞：テラスタルフェスex のブイズSAR ----
+[[cards]]
+tier = "S"
+name = "ニンフィアex SAR PSA10 [SV8a 212/187]"
+cost = 23800
+url = "https://www.cardrush-pokemon.jp/product/63177"
+note = "カードラッシュ 23,800。magi 成約 22,779〜24,514"
+
+[[cards]]
+tier = "S"
+name = "エーフィex SAR PSA10 [SV8a 211/187]"
+cost = 18800
+url = "https://www.cardrush-pokemon.jp/product/63182"
+note = "カードラッシュ 18,800。magi 成約 16,634〜18,746"
+
+[[cards]]
+tier = "S"
+name = "グレイシアex SAR PSA10 [SV8a 206/187]"
+cost = 17800
+url = "https://www.cardrush-pokemon.jp/product/63214"
+note = "カードラッシュ 17,800。magi 成約 14,420〜18,340"
+
+[[cards]]
+tier = "S"
+name = "リーフィアex SAR PSA10 [SV8a 200/187]"
+cost = 16800
+url = "https://www.cardrush-pokemon.jp/product/63264"
+note = "カードラッシュ 16,800。magi 成約 14,652〜16,281"
+
+[[cards]]
+tier = "S"
+name = "シャワーズex SAR PSA10 [SV8a 205/187]"
+cost = 15800
+url = "https://www.cardrush-pokemon.jp/product/63280"
+note = "カードラッシュ 15,800（在庫1）"
+
+[[cards]]
+tier = "S"
+name = "ブースターex SAR PSA10 [SV8a 202/187]"
+cost = 13800
+url = "https://www.cardrush-pokemon.jp/product/63265"
+note = "カードラッシュ 13,800（在庫1）"
+
+[[cards]]
+tier = "S"
+name = "サンダースex SAR PSA10 [SV8a 209/187]"
+cost = 12800
+url = "https://www.cardrush-pokemon.jp/product/63266"
+note = "カードラッシュ 12,800。magi 成約 11,639〜13,390"
+
+[[cards]]
+tier = "S"
+name = "イーブイex SAR PSA10 [SV8a 224/187]"
+cost = 13800
+url = "https://www.cardrush-pokemon.jp/product/63279"
+note = "カードラッシュ 13,800（在庫1）"
+
+[[cards]]
+tier = "S"
+name = "イーブイex SAR PSA10 [SV8a 223/187]"
+cost = 12800
+url = "https://www.cardrush-pokemon.jp/product/63278"
+note = "カードラッシュ 12,800。magi 成約 12,154〜13,114"
+
+# ---- S賞：ほかのブイズ ----
+[[cards]]
+tier = "S"
+name = "ブラッキー マスターボールミラー PSA10 [SV8a 092/187]"
+cost = 27800
+url = "https://www.cardrush-pokemon.jp/product/63176"
+note = "カードラッシュ 27,800。magi 成約 23,484〜29,706"
+
+[[cards]]
+tier = "S"
+name = "イーブイ AR PSA10 [SV4K 078/066]"
+cost = 11800
+url = "https://www.cardrush-pokemon.jp/product/55851"
+note = "カードラッシュ 11,800。magi 成約 11,309"
+
+[[cards]]
+tier = "S"
+name = "リーフィアVSTAR SAR PSA10 [S12a 210/172]"
+cost = 11800
+url = "https://www.cardrush-pokemon.jp/product/40432"
+note = "カードラッシュ 11,800。magi 成約 11,179"
+
+[[cards]]
+tier = "S"
+name = "エーフィ マスターボールミラー PSA10 [SV8a]"
+cost = 11800
+url = "https://www.cardrush-pokemon.jp/product/63312"
+note = "カードラッシュ 11,800（在庫1）"
+
+[[cards]]
+tier = "S"
+name = "グレイシアVSTAR SAR PSA10 [S12a 217/172]"
+cost = 10800
+note = "カードラッシュ 10,800"
+
+[[cards]]
+tier = "S"
+name = "イーブイ マスターボールミラー PSA10 [SV8a 125/187]"
+cost = 10800
+url = "https://www.cardrush-pokemon.jp/product/63946"
+note = "カードラッシュ 10,800（在庫1）。magi 成約 9,690〜10,809"
+
+[[cards]]
+tier = "S"
+name = "リーフィア マスターボールミラー PSA10 [SV8a]"
+cost = 10800
+note = "カードラッシュ 10,800"
+
+[[cards]]
+tier = "S"
+name = "サンダース マスターボールミラー PSA10 [SV8a]"
+cost = 9980
+note = "カードラッシュ 9,980"
+
+[[cards]]
+tier = "S"
+name = "ニンフィア マスターボールミラー PSA10 [SV8a 068/187]"
+cost = 8980
+url = "https://www.cardrush-pokemon.jp/product/64214"
+note = "カードラッシュ 8,980。magi 通販 10,580（在庫あり）"
+
+[[cards]]
+tier = "S"
+name = "ブースター CHR PSA10"
+cost = 8980
+note = "カードラッシュ 8,980"
+
+[[cards]]
+tier = "S"
+name = "グレイシア マスターボールミラー PSA10 [SV8a]"
+cost = 8480
+note = "カードラッシュ 8,480"
+
+[[cards]]
+tier = "S"
+name = "ニンフィアex RR PSA10 [SV8a]"
+cost = 7980
+count = 2
+note = "カードラッシュ 7,980"
+
+[[cards]]
+tier = "S"
+name = "ブラッキーex RR PSA10 [SV8a]"
+cost = 7480
+count = 2
+url = "https://www.cardrush-pokemon.jp/product/81024"
+note = "カードラッシュ 7,480。magi 通販 5,840（在庫あり）"
+
+[[cards]]
+tier = "S"
+name = "シャワーズ CHR PSA10"
+cost = 7480
+note = "カードラッシュ 7,480。magi 成約 約8,200〜9,800"
+
+[[cards]]
+tier = "S"
+name = "イーブイ CHR PSA10"
+cost = 7480
+note = "カードラッシュ 7,480"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 200
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 30
+count = "rest"
+note = "最低保証"
