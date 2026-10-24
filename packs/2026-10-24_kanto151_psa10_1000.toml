@@ -1,0 +1,121 @@
+# 初代151 PSA10ガチャ（1,000円課金・5,000口）
+#
+# 2026-10-24 槌田さんの依頼（ORIPA-22 と同じ条件で、新しいパックを作る）:
+#   一口1,000円課金、トップ賞30〜40万円、総口5,000口程度、還元率105〜110%。
+#
+# テーマ: 初代（カントー）のポケモンとトレーナー。当たりは12枚すべてPSA10。
+#   - 目玉はリザードンGX SSR PSA10（約35万円）。「ポケモンカード151」の中にはPSA10で30万円を超えるカードがないので、
+#     目玉とS爆は別の弾の初代ポケモンにした。S賞は151のSAR・マスターボールミラーが中心。
+#   - メガリザードンXex MUR は MEGA MUR PSA10ガチャ（ORIPA-22）の目玉なので入れていない。
+#   - 課金ガチャなので還元率は100%超。105%にすると、配送のみ利益で黒字に収まる。
+#
+# PSA10の値段は 2026-10-24 時点のカードラッシュ販売価格（売切のものは店の設定価格）と magi の成約価格のうち高い方。
+# 151のPSA10はカードラッシュでほぼ売切なので、仕入れは magi や他店になる。仕入れ前にスニダンで確認して再実行すること。
+
+[pack]
+name = "初代151 PSA10ガチャ（1,000円課金）"
+author = "槌田（案）"
+price = 1000
+draws = 5000
+target_return_rate = 1.05
+max_return_rate = 1.10
+seed = 20261025
+
+# ---- S爆（配送のみ）----
+[[cards]]
+tier = "S爆"
+name = "リザードンGX SSR PSA10 [SM8b 209/150]"
+cost = 348000
+url = "https://www.cardrush-pokemon.jp/product/22037"
+note = "カードラッシュ 348,000（在庫1）。magi 成約 306,940（10/7）。ポケカチ 約39.5万"
+
+[[cards]]
+tier = "S爆"
+name = "カイリューEX SR PSA10 [CP6 098/087]"
+cost = 245140
+url = "https://www.cardrush-pokemon.jp/product/40838"
+note = "カードラッシュ 228,000（在庫3）。magi 成約 245,140（8/2）"
+
+[[cards]]
+tier = "S爆"
+name = "ゲンガー マスターボールミラー PSA10 [SV2a 094/165]"
+cost = 178000
+url = "https://www.cardrush-pokemon.jp/product/46976"
+note = "カードラッシュ 178,000（売切）。magi 成約 142,871（10/13）。12か月の高値 264,561"
+
+# ---- S賞（ポケモンカード151 ほか）----
+[[cards]]
+tier = "S"
+name = "リザードンex SAR PSA10 [SV2a 201/165]"
+cost = 113300
+url = "https://www.cardrush-pokemon.jp/product/46235"
+note = "カードラッシュ 108,000（売切）。magi 成約 113,300（10/16）。ポケカチ 119,000"
+
+[[cards]]
+tier = "S"
+name = "ピカチュウ マスターボールミラー PSA10 [SV2a 025/165]"
+cost = 99800
+url = "https://www.cardrush-pokemon.jp/product/46303"
+note = "カードラッシュ 99,800（売切。状態難は97,800で在庫1）。magi 成約 82,194（10/21）"
+
+[[cards]]
+tier = "S"
+name = "ミュウex SAR PSA10 [SV2a 205/165]"
+cost = 72800
+url = "https://www.cardrush-pokemon.jp/product/46236"
+note = "カードラッシュ 72,800（在庫1）。magi 成約 67,800（10/21）"
+
+[[cards]]
+tier = "S"
+name = "リザードンex SAR PSA10 [SV4a 349/190]"
+cost = 67800
+url = "https://www.cardrush-pokemon.jp/product/52333"
+note = "カードラッシュ 67,800（在庫1）。シャイニートレジャーex"
+
+[[cards]]
+tier = "S"
+name = "フシギバナex SAR PSA10 [SV2a 200/165]"
+cost = 32800
+url = "https://www.cardrush-pokemon.jp/product/48491"
+note = "カードラッシュ 32,800（売切）。magi 成約 24,514（10/13）"
+
+[[cards]]
+tier = "S"
+name = "サンダーex SAR PSA10 [SV2a 204/165]"
+cost = 31800
+url = "https://www.cardrush-pokemon.jp/product/46233"
+note = "カードラッシュ 31,800（売切）。magi 成約 23,690（10/4）"
+
+[[cards]]
+tier = "S"
+name = "ミュウツー マスターボールミラー PSA10 [SV2a 150/165]"
+cost = 29800
+url = "https://www.cardrush-pokemon.jp/product/46977"
+note = "カードラッシュ 29,800（売切）。magi 成約 25,750（10/7）"
+
+[[cards]]
+tier = "S"
+name = "カメックスex SAR PSA10 [SV2a 202/165]"
+cost = 28634
+url = "https://www.cardrush-pokemon.jp/product/48878"
+note = "カードラッシュ 27,800（売切）。magi 成約 28,634（10/17）"
+
+[[cards]]
+tier = "S"
+name = "エリカの招待 SAR PSA10 [SV2a 206/165]"
+cost = 21939
+url = "https://www.cardrush-pokemon.jp/product/45584"
+note = "カードラッシュ 21,800（売切）。magi 成約 21,939（10/10）"
+
+# ---- ハズレ枠 ----
+[[fillers]]
+tier = "A"
+pt = 2000
+count = "auto"
+note = "2倍アド"
+
+[[fillers]]
+tier = "B"
+pt = 100
+count = "rest"
+note = "最低保証（一回の1割）"
