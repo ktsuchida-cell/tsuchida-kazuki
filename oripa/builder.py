@@ -46,6 +46,11 @@ def _validate_config(config: PackConfig) -> None:
         valid_int = isinstance(filler.count, int) and not isinstance(filler.count, bool) and filler.count >= 0
         if not valid_int and filler.count not in ("auto", "rest"):
             raise PackError(f'{filler.tier}: count は0以上の整数か "auto" / "rest" で指定してください。')
+        if config.charge_gacha and filler.pt < config.price:
+            raise PackError(
+                f"{filler.tier}: 課金ガチャは最低PTを一回の価格以上にしてください"
+                f"（一回 {config.price:,}PT なら {config.price:,}PT 以上。今は {filler.pt:,}PT）。"
+            )
 
 
 def _card_line(card: Card, config: PackConfig) -> Line:

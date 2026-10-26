@@ -72,6 +72,7 @@ def load_config(path) -> PackConfig:
         max_return_rate=pack.get("max_return_rate", 1.0),
         seed=pack.get("seed"),
         top_number_from=pack.get("top_number_from", 0.9),
+        charge_gacha=pack.get("charge_gacha", False),
         author=pack.get("author", ""),
     )
 

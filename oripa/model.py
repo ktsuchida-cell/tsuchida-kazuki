@@ -58,6 +58,7 @@ class PackConfig:
     max_return_rate: float = 1.0  # これを超えたらエラー
     seed: Optional[int] = None  # 当選番号の乱数シード
     top_number_from: float = 0.9  # 一番高い当たりは総口のこの割合以降の番号にする
+    charge_gacha: bool = False  # 課金ガチャなら、ハズレ枠（最低PT）を一回の価格以上にする
     author: str = ""
 
 

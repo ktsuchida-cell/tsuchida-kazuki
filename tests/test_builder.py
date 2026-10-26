@@ -140,6 +140,23 @@ def test_rejects_top_number_ratio_outside_zero_to_one():
         build_pack(_simple_config(top_number_from=90))
 
 
+def test_charge_gacha_requires_min_pt_at_least_price():
+    with pytest.raises(PackError, match="課金ガチャ"):
+        build_pack(_simple_config(charge_gacha=True, max_return_rate=1.2))
+
+
+def test_charge_gacha_with_min_pt_equal_to_price_returns_over_100_percent():
+    config = _simple_config(
+        charge_gacha=True,
+        fillers=[Filler("B", 1000, "rest")],
+        target_return_rate=1.10,
+        max_return_rate=1.10,
+    )
+    result = build_pack(config)
+    assert min(line.pt for line in result.filler_lines) == 1000
+    assert 1.0 < result.metrics.return_rate <= 1.10
+
+
 def test_ship_only_defaults_to_s_baku_tier():
     result = build_pack(_simple_config())
     assert [line.ship_only for line in result.card_lines] == [True, False]
