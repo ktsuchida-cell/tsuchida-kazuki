@@ -1,0 +1,9 @@
+【残り{remaining}口】{name}
+
+まだ残っている当たり
+{left}
+
+1回{price}PT
+
+{url}
+{hashtags}
