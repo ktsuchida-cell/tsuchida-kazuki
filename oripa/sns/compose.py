@@ -36,12 +36,13 @@ def pack_context(result: PackResult, rules: Rules, url: Optional[str] = None) ->
         "price": f"{m.price:,}",
         "draws": f"{m.draws:,}",
         "hits": f"{hits:,}",
-        "hits_line": f"当たり{hits:,}枚は全部PSA10" if all_psa10 else f"当たり{hits:,}枚",
+        "hits_line": _hits_line(hits, all_psa10),
         "top": display_name(cards[0].name),
         "top_tier": "\n".join(_card_item(line) for line in cards if line.tier == top_tier),
         "lineup": "\n".join(_card_item(line) for line in cards[:5]),
         "ad_odds": _odds(m.ad_odds),
         "min_pt": f"{min_pt:,}" if min_pt is not None else "",
+        "ad_line": _ad_line(m, min_pt),
         "return_rate": f"{math.floor(m.return_rate * 1000) / 10:g}",  # 0.1%単位で切り捨て
     }
 
@@ -58,6 +59,21 @@ def load_templates(rules: Rules, post_type: str) -> list:
         raise FileNotFoundError(f"テンプレート {path} がありません（あるもの: {names}）。")
     blocks = re.split(r"^-{3,}\s*$", path.read_text(encoding="utf-8"), flags=re.M)
     return [b.strip("\n") for b in blocks if b.strip()]
+
+
+def _hits_line(hits: int, all_psa10: bool) -> str:
+    if not all_psa10:
+        return f"当たり{hits:,}枚"
+    return "当たりはPSA10" if hits == 1 else f"当たり{hits:,}枚は全部PSA10"
+
+
+def _ad_line(metrics, min_pt) -> str:
+    """「アド確率 1/2.8・最低保証 100PT」。課金ガチャ（最低保証が1回の価格以上）はアド確率を出さない。"""
+    if min_pt is None:
+        return f"アド確率 {_odds(metrics.ad_odds)}"
+    if min_pt >= metrics.price:
+        return f"最低保証 {min_pt:,}PT"
+    return f"アド確率 {_odds(metrics.ad_odds)}・最低保証 {min_pt:,}PT"
 
 
 def _card_item(line) -> str:

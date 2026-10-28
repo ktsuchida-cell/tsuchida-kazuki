@@ -6,7 +6,7 @@
 目玉
 {top_tier}
 
-アド確率 {ad_odds}・最低保証 {min_pt}PT
+{ad_line}
 
 {url}
 {hashtags}

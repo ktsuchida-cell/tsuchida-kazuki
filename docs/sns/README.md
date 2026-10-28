@@ -76,7 +76,7 @@ Claude Code に「Xの投稿を分析して」と頼めば、ここまでやる�
 ## 3. 投稿文を作る
 
 ```
-python -m oripa.sns draft packs/2026-10-24_kanto151_psa10_1000.toml --type 新ガチャ告知
+python -m oripa.sns draft packs/2026-10-13_dragon_psa10_5000.toml --type 新ガチャ告知
 python -m oripa.sns draft packs/xxx.toml --type 残り口数 --remaining 1200 --set "left=・カメックスEX SR PSA10"
 python -m oripa.sns draft packs/xxx.toml --type 当選報告 --set "card=カメックスEX SR PSA10"
 python -m oripa.sns draft --type プレゼント企画 --set prize=1,000PT --set winners=10 --set "deadline=11/3（火）23:59"
@@ -90,15 +90,16 @@ python -m oripa.sns draft --type プレゼント企画 --set prize=1,000PT --set
 
 | 項目 | 中身 | 例 |
 | --- | --- | --- |
-| `{name}` | ガチャ名（パック定義の name） | 初代151 PSA10ガチャ（1,000円課金） |
-| `{price}` / `{draws}` | 1回の価格 / 総口 | 1,000 / 5,000 |
-| `{hits}` / `{hits_line}` | 当たりの枚数 / 「当たり12枚は全部PSA10」（全部PSA10でなければ「当たり12枚」） | |
-| `{top}` | 一番高い当たり | カメックスEX SR PSA10 |
-| `{top_tier}` | 一番上の賞（S爆）の一覧（1行1枚） | ・カメックスEX SR PSA10 |
+| `{name}` | ガチャ名（パック定義の name） | ドラゴン PSA10ガチャ |
+| `{price}` / `{draws}` | 1回の価格 / 総口 | 5,000 / 3,000 |
+| `{hits}` / `{hits_line}` | 当たりの枚数 / 当たりが全部PSA10かどうかの1行 | 10 / 当たり10枚は全部PSA10 |
+| `{top}` | 一番高い当たり | レシラム&リザードンGX SA PSA10 |
+| `{top_tier}` | 一番上の賞（S爆）の一覧（1行1枚） | ・レシラム&リザードンGX SA PSA10 |
 | `{lineup}` | 高い順に5枚 | |
-| `{ad_odds}` | アド確率。分母は0.1単位で**切り上げ**（当たりやすく見せない） | 1/3.3 |
-| `{min_pt}` | 最低保証のPT（ハズレ枠の一番低いPT） | 100 |
-| `{return_rate}` | 還元率（%）。0.1%単位で**切り捨て** | 104.9 |
+| `{ad_odds}` | アド確率。分母は0.1単位で**切り上げ**（当たりやすく見せない） | 1/4 |
+| `{min_pt}` | 最低保証のPT（ハズレ枠の一番低いPT） | 2,500 |
+| `{ad_line}` | 「アド確率 ◯・最低保証 ◯PT」。課金ガチャ（最低保証が1回の価格以上）は「最低保証 ◯PT」だけ | アド確率 1/4・最低保証 2,500PT |
+| `{return_rate}` | 還元率（%）。0.1%単位で**切り捨て** | 96.9 |
 | `{url}` / `{account}` / `{hashtags}` | rules.toml のサイトURL（`--url` で変更）/ アカウント / ハッシュタグ | |
 | `{remaining}` | `--remaining` の残り口数 | 1,200 |
 | そのほか | `--set 項目=値` で入れる（`{card}` `{left}` `{prize}` `{winners}` `{deadline}` など） | |

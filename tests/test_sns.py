@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 
-from oripa import build_pack, load_config
+from oripa import Card, Filler, PackConfig, build_pack, load_config
 from oripa.sns import analyze, check_post, fill, load_posts, load_rules, load_text, pack_context, weighted_length
 from oripa.sns.check import CAUTION, ERROR
 from oripa.sns.cli import main
@@ -19,6 +19,29 @@ EXAMPLES = ROOT / "packs" / "examples"
 @pytest.fixture
 def rules():
     return load_rules(RULES)
+
+
+@pytest.fixture
+def psa10_pack():
+    """当たりが全部PSA10のパック（名前と目玉が長めで、テンプレートの文字数を確かめるのに使う）。"""
+    cards = [
+        Card("S爆", "カメックスEX SR PSA10 [CP6 092/087]", 348_000),
+        Card("S爆", "カイリューEX SR PSA10 [CP6 098/087]", 245_140),
+        Card("S爆", "ゲンガー マスターボールミラー PSA10 [SV2a 094/165]", 178_000),
+        Card("S", "ミュウex SAR PSA10 [SV2a 205/165]", 72_800, count=2),
+    ]
+    fillers = [Filler("A", 2000, "auto"), Filler("B", 100, "rest")]
+    config = PackConfig(
+        "初代151 PSA10ガチャ（1,000円課金）",
+        1000,
+        5000,
+        cards,
+        fillers,
+        target_return_rate=1.05,
+        max_return_rate=1.1,
+        seed=1,
+    )
+    return build_pack(config)
 
 
 @pytest.mark.parametrize(
@@ -136,20 +159,34 @@ def test_check_numbers_against_pack(rules):
     assert check_post("残り300口", rules, result, remaining=300) == []
 
 
-def test_pack_context_rounds_in_the_safe_direction(rules):
-    result = build_pack(load_config(ROOT / "packs" / "2026-10-24_kanto151_psa10_1000.toml"))
-    ctx = pack_context(result, rules)
-    assert result.metrics.ad_odds == pytest.approx(3.2134, abs=1e-4)
-    assert ctx["ad_odds"] == "1/3.3"  # 当たりやすく見せないよう切り上げ
-    assert ctx["return_rate"] == "104.9"  # 104.998% を切り捨て
+def test_pack_context_rounds_in_the_safe_direction(rules, psa10_pack):
+    ctx = pack_context(psa10_pack, rules)
+    m = psa10_pack.metrics
+    assert (m.ad_count, m.return_rate) == (1803, pytest.approx(1.04984))  # 当たり5枚＋A 1,798枚
+    assert ctx["ad_odds"] == "1/2.8"  # 1/2.773… を当たりやすく見せないよう切り上げ
+    assert ctx["return_rate"] == "104.9"  # 104.984% を切り捨て
     assert ctx["top"] == "カメックスEX SR PSA10"  # [CP6 092/087] は外す
-    assert ctx["hits_line"] == "当たり12枚は全部PSA10"
-    assert ctx["top_tier"].splitlines()[0] == "・カメックスEX SR PSA10"
+    assert ctx["hits_line"] == "当たり5枚は全部PSA10"
+    assert ctx["top_tier"].splitlines() == [
+        "・カメックスEX SR PSA10",
+        "・カイリューEX SR PSA10",
+        "・ゲンガー マスターボールミラー PSA10",
+    ]
+    assert ctx["lineup"].splitlines()[-1] == "・ミュウex SAR PSA10 ×2"
+    assert ctx["ad_line"] == "アド確率 1/2.8・最低保証 100PT"
     assert fill("{name}\n\n\n\n{card}", ctx) == "初代151 PSA10ガチャ（1,000円課金）\n\n{card}"
 
 
-def test_templates_fit_and_pass_check(rules):
-    result = build_pack(load_config(ROOT / "packs" / "2026-10-24_kanto151_psa10_1000.toml"))
+def test_pack_context_for_charge_gacha_with_one_hit(rules):
+    # 課金ガチャは全口が1回の価格以上なので、アド確率は出さない
+    cards = [Card("S爆", "カメックスEX SR PSA10 [CP6 092/087]", 348_000)]
+    config = PackConfig("課金", 1000, 5200, cards, [Filler("B", 1000, "rest")], max_return_rate=1.1, charge_gacha=True)
+    ctx = pack_context(build_pack(config), rules)
+    assert (ctx["hits_line"], ctx["ad_line"]) == ("当たりはPSA10", "最低保証 1,000PT")
+
+
+def test_templates_fit_and_pass_check(rules, psa10_pack):
+    result = psa10_pack
     ctx = pack_context(result, rules)
     for path in rules.templates_dir.glob("*.txt"):
         for template in path.read_text(encoding="utf-8").split("\n---\n"):
