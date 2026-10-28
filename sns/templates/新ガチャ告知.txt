@@ -1,0 +1,21 @@
+【新ガチャ公開】{name}
+
+1回{price}PT／全{draws}口
+{hits_line}
+
+目玉
+{top_tier}
+
+アド確率 {ad_odds}・最低保証 {min_pt}PT
+
+{url}
+{hashtags}
+---
+{top} が当たる
+{name} を公開しました
+
+1回{price}PT・全{draws}口
+{hits_line}
+
+{url}
+{hashtags}
